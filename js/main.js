@@ -4,19 +4,25 @@ const leftButton = document.querySelector(".carousel-arrow.left");
 const rightButton = document.querySelector(".carousel-arrow.right");
 const carouselWidth = carousel.offsetWidth;
 const itemsStyle = item.currentStyle || window.getComputedStyle(item)
-const itemsMarginRight = Number(itemsStyle.marginRight.match(/\d+/g)[0]);
+const itemsMarginRight = parseFloat(itemsStyle.marginRight.match(/[+-]?([0-9]*[.])?[0-9]+/)[0]) + parseFloat(itemsStyle.marginLeft.match(/[+-]?([0-9]*[.])?[0-9]+/)[0]);
 const itemsCount = carousel.querySelectorAll(".carousel-item").length;
 let offset = 0;
 
-//find the max width of the carousel.
-const maxX = -((itemsCount / 5) * carouselWidth + 
-               (itemsMarginRight * (itemsCount / 5)) - 
-               carouselWidth - itemsMarginRight);
+//find the with of screen and the items to show
+let windowWidth = window.innerWidth;
+let itemsShow = 2;
+if (windowWidth > 1200) itemsShow = 5
+else if (windowWidth > 992) itemsShow = 4
+else if (windowWidth > 768) itemsShow = 3
 
+//find the max width of the carousel.
+const maxX = -((itemsCount / itemsShow) * carouselWidth + 
+               (itemsMarginRight * (itemsCount / itemsShow)) - 
+               carouselWidth - itemsMarginRight);
 
 //Controls events
 leftButton.addEventListener("click", function() {
-	if (offset !== 0) {
+	if (offset < 0) {
 		offset += carouselWidth + itemsMarginRight;
 	} else {
 		offset = maxX;
@@ -25,7 +31,7 @@ leftButton.addEventListener("click", function() {
 })
   
 rightButton.addEventListener("click", function() {
-	if (offset !== maxX) {
+	if (offset > maxX) {
 		offset -= carouselWidth + itemsMarginRight;
 	} else {
 		offset = 0;
