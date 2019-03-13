@@ -66,24 +66,40 @@ img {
   vertical-align: middle;
 }
 
-.section-header{
+section .section-header{
 	margin-bottom: 60px;
+	width: 100%;
 }
 
-.section-header .title{
+section .section-header .title{
 	display: inline-block;
 }
 
-.section-header a{
+section .section-header a{
 	font-size: 14px;
 	margin-top: 5px;
 	float: right;
 }
 
-.section-header .lead{
+section .section-header .lead{
 	margin-top: 10px;
 }
 
+section a.category-link{
+	color: #5DA20F;
+}
+
+section a.category-link:hover{
+	cursor: pointer;
+}
+
+section a.category-link img{
+	margin-left: 12px;
+}
+
+section .lead{
+	color: #8b959e;
+}
 
 /* HERO SECTION */
 
@@ -112,27 +128,7 @@ img {
 	line-height: 1.4em;
 }
 
-
-/* RELATED SECTION */
-
-.carousel-section .section-header{
-	width: 100%;
-}
-
-
 /* CAROUSEL */
-
-a.category-link{
-	color: #5DA20F;
-}
-
-a.category-link:hover{
-	cursor: pointer;
-}
-
-a.category-link img{
-	margin-left: 12px;
-}
 
 .carousel-content{
 	position: relative;
@@ -182,16 +178,7 @@ a.category-link img{
 	background-color: #eee;	
 }
 
-.carousel-arrow.left svg{
-    width: 16px;
-    height: 12px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-}
-
-.carousel-arrow.right svg{
+.carousel-arrow svg{
 	width: 16px;
     height: 12px;
     position: absolute;
@@ -228,10 +215,6 @@ a.category-link img{
 	font-size: 0.8rem;	
 }
 
-.lead{
-	color: #8b959e;
-}
-
 /* CONTACT SECTION */
 
 .content, .content-flex {
@@ -250,7 +233,7 @@ a.category-link img{
 	text-align: right;
 }
 
-input{
+input.form-control{
 	font-family: Open Sans,sans-serif;
     border: 1px solid #c1c6cb;
     border-radius: 3px;
@@ -265,7 +248,7 @@ input{
     float: left;
 }
 
-form button{
+form button.btn-primary{
     text-align: center;
     cursor: pointer;
     white-space: nowrap;
@@ -283,6 +266,10 @@ form button{
     float: left;
 }
 
-form button:hover{
+form button.btn-primary:hover{
 	background: #6fbb18;
+}
+
+.social-buttons img:hover{
+	opacity: 0.6;
 }
