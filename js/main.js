@@ -6,14 +6,15 @@ const carouselWidth = carousel.offsetWidth;
 const itemsStyle = item.currentStyle || window.getComputedStyle(item)
 const itemsMarginRight = Number(itemsStyle.marginRight.match(/\d+/g)[0]);
 const itemsCount = carousel.querySelectorAll(".carousel-item").length;
-
 let offset = 0;
 
+//find the max width of the carousel.
 const maxX = -((itemsCount / 5) * carouselWidth + 
                (itemsMarginRight * (itemsCount / 5)) - 
                carouselWidth - itemsMarginRight);
 
 
+//Controls events
 leftButton.addEventListener("click", function() {
 	if (offset !== 0) {
 		offset += carouselWidth + itemsMarginRight;
