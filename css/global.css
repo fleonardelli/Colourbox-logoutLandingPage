@@ -111,10 +111,6 @@ section .lead{
   	align-items: center;
 }
 
-.hero-caption{
-	margin-left: 100px;
-}
-
 .hero-header{
 	font-size: 25px;
 	font-weight: 300;
