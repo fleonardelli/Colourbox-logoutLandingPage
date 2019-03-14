@@ -52,8 +52,7 @@ section:first-of-type {
 }
 
 section{
-	padding: 40px;
-	display: block;
+	padding: 40px 0;
 }
 
 ol, ul {
@@ -112,10 +111,6 @@ section .lead{
   	align-items: center;
 }
 
-.hero-caption{
-	margin-left: 100px;
-}
-
 .hero-header{
 	font-size: 25px;
 	font-weight: 300;
@@ -140,7 +135,6 @@ section .lead{
 }
 
 .carousel-inner{
-    width: 100%;
     clear: both;
     white-space: nowrap;
     font-size: 0;
@@ -225,8 +219,12 @@ section .lead{
 	display: flex;
 }
 
-.column{
-  flex: 50%;
+.column-2{
+  flex: 66.66%;
+}
+
+.column-1{
+	flex: 33.33%;
 }
 
 .social-buttons{
@@ -273,3 +271,80 @@ form button.btn-primary:hover{
 .social-buttons img:hover{
 	opacity: 0.6;
 }
+
+/** RESPONSIVE **/
+.container{
+	width: 1170px;
+}
+
+.carousel-item{
+	width: 220px;
+}
+
+@media (max-width:1200px) {
+	.container {
+		width:970px
+	}
+	.carousel-item{
+		width: 228px;
+	}
+}
+@media (max-width:992px) {
+	.container {
+		width:750px
+	}
+	.carousel-item{
+		width: 233px;
+	}
+	input.form-control {
+		width: 50%;
+	}
+}
+@media (max-width:768px) { 
+	.container {
+		width: 467px;
+	}
+	.carousel-item{
+		width: 214px;
+	}
+	section .section-header h1{
+		text-align: center;	
+	}
+	section .section-header a{
+		margin-top: 10px;
+		float: none;
+		display: block;
+		text-align: center;
+	}
+	section .lead{
+		text-align: center;
+	}
+	.content-flex{
+		display: flex;
+		flex-direction: column;
+		flex-basis: 100%;
+	}
+	.column-1{
+		margin-top: 40px;
+		text-align: center;
+	}
+
+}
+@media (max-width:480px) { 
+	.container {
+		width: 100%;
+	}
+	.carousel-item{
+		width: 49%;
+		margin-right: 2%;
+	}
+	input.form-control{
+		width: 100%;
+	}
+	form button.btn-primary{
+		width: 100%;
+		margin-top: 20px;
+	}
+
+}
+
