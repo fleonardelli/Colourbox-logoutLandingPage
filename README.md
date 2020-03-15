@@ -3,11 +3,18 @@
 This assignment was an evaluation of candidates for the position as Frontend
 Developer. The focus of the assignment evaluated:
 ● Ability to understand and solve problems
+
 ● Ability to produce top of the line HTML
+
 ● Ability to produce top of the line CSS
+
 ● Ability to produce top of the line JavaScript
+
 ● Ability to do proper system design
+
 ● Coding skills in general
+
+
 
 
 # The assignment
